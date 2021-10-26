@@ -1,0 +1,447 @@
+.advantages {
+    padding: 126px 0;
+    
+    .wrapper {
+        position: relative;
+    }
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 40px;
+        row-gap: 40px;
+        grid-template-rows: repeat(2, 230px);
+    }
+
+    &__title {
+        font-size: 50px;
+        color: @white;
+        font-weight: 400;
+        margin: 17px 0 0;
+        line-height: 1.1;
+    }
+
+    &__item {
+        
+        .icon {
+            fill: @green;
+        }
+
+        &:not(.advantages__item_main) {
+            border: 4px solid @green;
+            position: relative;
+            padding: 31px 35px;
+            transform: translateY(0);
+            box-shadow: 0 0 0 0 @black;
+            transition: 0.3s;
+            opacity: 1;
+
+            &.opacity {
+                opacity: 0.5;
+            }
+
+            &.fade {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+    
+            &.anim {
+                transform: translateY(0);
+                opacity: 1;
+            }
+    
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 10px 10px @black;
+            }
+
+            .text {
+                font-size: 20px;
+                font-weight: 400;
+                margin: 0;
+            }
+
+            .icon {
+                position: absolute;
+                bottom: 27px;
+                right: 28px;
+            }
+
+            .btn {
+                position: absolute;
+                bottom: 30px;
+                left: 30px;
+                width: 24px;
+                height: 24px;
+                cursor: pointer;
+
+                span {
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background-color: @green;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    margin: auto;
+
+                    &:nth-of-type(1) {
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+
+    .advantages-content {
+        position: absolute;
+        top: 0;
+        left: 20px;
+        width: calc(100% - 40px);
+        height: 100%;
+        background-color: @bg;
+        display: none;
+        border: 4px solid @green;
+
+        .close {
+            position: absolute;
+            top: 24px;
+            right: 26px;
+            width: 36px;
+            height: 36px;
+            z-index: 3;
+            cursor: pointer;
+
+            span {
+                position: absolute;
+                pointer-events: none;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                width: 100%;
+                height: 4px;
+                background-color: @white;
+                border-radius: 100px;
+                
+                &:nth-of-type(1) {
+                    transform: rotate(45deg);
+                }
+
+                &:nth-of-type(2) {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+
+        .pagination {
+            position: absolute;
+            bottom: 26px;
+            right: 35px;
+            z-index: 3;
+
+            &__item {
+                font-weight: 700;
+                color: @white;
+                font-size: 17px;
+                cursor: pointer;
+                margin-left: 12px;
+                transition: 0.3s;
+
+                &.active {
+                    color: @green;
+                }
+            }
+        }
+
+        &__item {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 2;
+            display: none;
+            width: 100%;
+            height: 100%;
+            padding: 90px 100px;
+            
+
+            &.active {
+                display: block;
+            }
+        }
+
+        
+        
+        &__wrap {
+            display: flex;
+            height: 100%;
+            justify-content: space-between;
+           
+
+            .icon {
+                min-width: 260px; 
+                min-height: 260px;
+                max-width: 260px;
+                max-height: 260px;
+                fill: @green;
+            }
+
+            .wysiwyg {
+                padding-left: 20px;
+                max-width: calc(100% - 340px);
+                max-height: 100%;
+                overflow: auto;
+
+                scrollbar-width: thin;
+                scrollbar-color: @bg @green;
+
+                &::-webkit-scrollbar {
+                    height: 12px;
+                    width: 4px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: @bg;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: @green;
+                    border-radius: 100px;
+                }
+
+                p {
+                    &.name {
+                        font-size: 35px;
+                        font-weight: 400;
+                        line-height: 1.15;
+                        margin: 0;
+                    }
+                }
+
+                p,
+                ol,
+                ul {
+                    font-size: 20px;
+                    margin: 25px 0;
+                }
+        
+                p {
+                    line-height: 1.4;
+                }
+        
+                a {
+                    color: @green;
+                }
+        
+                ul,
+                ol {
+                    list-style: none;
+                    padding: 0;  
+                }
+        
+                ul {
+                    li {
+                        position: relative;
+                        padding-left: 30px;
+                        margin-bottom: 16px;
+        
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            width: 7px;
+                            height: 7px;
+                            background-color: @green;
+                            border-radius: 100px;
+                            left: 0;
+                            top: 9px;
+                        }
+                    }
+                }
+        
+                ol {
+                    counter-reset: item;
+                    li {
+                        position: relative;
+                        padding-left: 30px;
+                        margin-bottom: 16px;
+                        counter-increment: item;
+        
+                        &:before {
+                            content: counter(item)".";
+                            position: absolute;
+                            color: @green;
+                            font-size: 15px;
+                            left: 0;
+                            top: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .advantages {
+        padding: 50px 0;
+
+        &__title {
+            font-size: 30px;
+        }
+
+        &__item {
+            &:not(.advantages__item_main) {
+                .text {
+                    font-size: 17px
+                }
+            }
+        }
+
+        .advantages-content {
+            &__item {
+                padding: 75px;
+            }
+
+            &__wrap {
+                .wysiwyg {
+                    p {
+                        &.name {
+                            font-size: 30px;
+                        }
+                    }
+                    p,
+                    ol,
+                    ul {
+                        font-size: 17px;
+                        margin: 25px 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .advantages {
+        &__wrap {
+            column-gap: 30px;
+            row-gap: 30px;
+            grid-template-rows: repeat(2, 195px);
+        }
+
+        &__item {
+            &:not(.advantages__item_main) {
+                padding: 20px;
+
+                .icon {
+                    right: 20px;
+                    bottom: 20px;
+                }
+
+                .btn {
+                    left: 20px;
+                    bottom: 20px;
+                }
+            }
+        }
+
+        .advantages-content {
+            &__item {
+                padding: 75px 40px;
+            }
+
+            &__wrap {
+                .icon {
+                    min-width: 200px; 
+                    min-height: 200px;
+                    max-width: 200px;
+                    max-height: 200px;
+                }
+
+                .wysiwyg {
+                    max-width: calc(100% - 200px);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .advantages {
+        &__wrap {
+            grid-template-columns: 1fr 1fr;
+            column-gap: 30px;
+            row-gap: 30px;
+            grid-template-rows: repeat(3, 195px);
+        }
+
+        .advantages-content {
+            
+            &__item {
+                
+            }
+
+            &__wrap {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+
+                .icon {
+                    min-width: 200px; 
+                    min-height: 200px;
+                    max-width: 200px;
+                    max-height: 200px;
+                }
+
+                .wysiwyg {
+                    padding-left: 0;
+                    margin-top: 20px;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .advantages {
+        &__wrap {
+            grid-template-columns: 1fr;
+            column-gap: 0;
+            row-gap: 30px;
+            grid-template-rows: repeat(3, 195px);
+            grid-auto-rows: 195px;
+        }
+
+        .advantages-content {
+            max-height: 645px;
+
+            .close {
+                top: 10px;
+                right: 10px;
+            }
+           
+            &__item {
+                padding: 45px 20px;
+            }
+
+            &__wrap {
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+
+                .icon {
+                    min-width: 200px; 
+                    min-height: 200px;
+                    max-width: 200px;
+                    max-height: 200px;
+                }
+
+                .wysiwyg {
+                    margin-top: 20px;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

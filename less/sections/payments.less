@@ -1,0 +1,111 @@
+.payments {
+    padding: 43px 0;
+
+    &__title {
+        margin: 0 0 46px;
+        font-size: 30px;
+        color: @green;
+        font-weight: 400;
+    }
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 40px;
+    }
+
+    &__item {
+        position: relative;
+        background-color: #162425;
+        background-image: url("../img/lines.png");
+        padding: 34px;
+
+        .icon {
+            position: absolute;
+            right: -22px;
+            top: -25px;
+            background-color: @green;
+            width: 86px;
+            height: 86px;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                width: 66px;
+                height: 66px;
+                fill: @white;
+            }
+        }
+
+        .name {
+            font-size: 25px;
+            font-weight: 700;
+            margin: 0 0 18px;
+            color: @white;
+        }
+
+        .text {
+            font-size: 20px;
+            color: @white;
+            margin: 0;
+            line-height: 1;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .payments {
+        padding: 40px 0;
+
+        &__item {
+            
+            .icon {
+                right: -10px;
+                top: -35px;
+                width: 72px;
+                height: 72px;
+
+                svg {
+                    width: 52px;
+                    height: 52px;
+                }
+            }
+
+            .name {
+                font-size: 20px;
+            }
+
+            .text {
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .payments {
+        &__wrap {
+            column-gap: 20px;
+        }
+
+        &__item {
+            padding: 40px 20px 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .payments {
+        &__wrap {
+            column-gap: 0;
+            row-gap: 60px;
+            grid-template-columns: 1fr;
+        }
+
+        &__item {
+            
+        }
+    }
+}

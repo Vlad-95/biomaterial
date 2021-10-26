@@ -1,0 +1,402 @@
+.feedback {
+    padding: 61px 0 48px;
+    background-color: #f4f5f8;
+
+    &__wrap {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .content {
+        width: calc(100% - 330px);
+        padding-right: 70px;
+    }
+
+    .title-row {
+        margin-bottom: 23px;
+    }
+    .tabs {
+        margin-left: 49px;
+
+        &__item {
+            font-size: 17px;
+            padding: 10px 16px;
+            margin: 6px 6px 0 0;
+        }
+    }
+
+    .sidebar {
+        background-color: @blue;
+        width: 330px;
+        margin-top: -20px;
+        padding: 32px 25px 43px;
+
+        &__title {
+            font-size: 25px;
+            font-weight: 600;
+            color: @white;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        &__item {
+            display: flex;
+
+            &:not(:last-of-type) {
+                margin-bottom: 20px;
+            }
+
+            .img {
+                min-width: 50px;
+                width: 50px;
+                height: 50px;
+                border-radius: 100px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .content {
+                color: @white;
+                width: auto;
+                padding: 7px 0 0 15px;
+
+                .name {
+                    font-size: 17px;
+                    font-weight: 600;
+                    line-height: 1.1;
+                    margin-bottom: 12px;
+                }
+
+                .profession,
+                .address,
+                .phone,
+                .email {
+                    font-size: 13px;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    margin-bottom: 12px;
+                }
+
+                .email {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.form {
+
+    &__item {
+        display: block;
+        margin-bottom: 25px;
+
+        
+
+        &-name {
+            margin: 0 0 8px;
+            font-size: 15px;
+            font-weight: 600;
+            color: @blue;
+        }
+
+        &-input {
+            width: 100%;
+            height: 39px;
+            //background-color: @white;
+            border: 1px solid #cacfdd;
+            outline: none;
+            padding: 10px;
+            font-size: 15px;
+            color: @blue;
+            font-family: @PFBeau;
+
+            &.error {
+                border-color: red;
+            }
+        }
+
+        &-comment {
+            width: 100%;
+            height: 119px;
+            //background-color: @white;
+            border: 1px solid #cacfdd;
+            outline: none;
+            padding: 10px;
+            font-size: 15px;
+            color: @blue;
+            font-family: @PFBeau;
+
+            &.error {
+                border-color: red;
+            }
+        }
+
+        &.file {
+            display: none;
+            position: relative;
+
+            .form__file {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                .icon {
+                    width: 24px;
+                    min-width: 24px;
+                }
+
+                .text {
+                    font-style: italic;
+                    font-size: 13px;
+                    padding-left: 15px;
+                    line-height: 1.5;
+
+                    span {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            input {
+                visibility: hidden;
+                opacity: 0;
+                position: absolute;
+            }
+
+            .files-list {
+                margin-bottom: 20px;
+            }
+
+            .files-list__item {
+                font-size: 13px;
+                font-style: italic;
+                position: relative;
+                padding-left: 39px;
+
+                &:not(:last-of-type) {
+                    margin-bottom: 15px;
+                }
+            
+                .delete {
+                    cursor: pointer;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    width: 24px;
+                    height: 24px;
+                    background-image: url("../img/icons/del.png");
+                    background-position: center;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+
+    &__row {
+        display: flex;
+        margin: 0 -10px;
+
+        .form__item {
+            width: calc(50% - 20px);
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__agree {
+        position: relative;
+        cursor: pointer;
+
+        .agree {
+            position: absolute;
+            visibility: hidden;
+            opacity: 0;
+
+            &.error + .form__agree-text {
+                &:before {
+                    border-color: red;
+                }
+                
+            }
+
+            &:checked + .form__agree-text {
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-text {
+            font-size: 13px;
+            font-style: italic;
+            position: relative;
+            padding-left: 43px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                width: 30px;
+                height: 30px;
+                border: 1px solid #cacfdd;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 9px;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                width: 13px;
+                height: 10px;
+                background-image: url("../img/icons/agree.png");
+                background-size: 13px 10px;
+                opacity: 0;
+                transition: 0.3s;
+            }
+
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__submit {
+        background-color: @blue;
+        color: @white;
+        font-family: @PFBeau;
+        font-size: 17px;
+        font-weight: 600;
+        border-radius: 100px;
+        border: 1px solid @blue;
+        padding: 10px 15px;
+        transition: 0.3s;
+
+        &:hover {
+            color: @blue;
+            background-color: transparent;
+            border-color: @blue;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 1200px) {
+    .feedback {
+        .content {
+            width: calc(100% - 320px);
+            padding-right: 30px;
+        }
+
+        .sidebar {
+            width: 320px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .feedback {
+        padding: 61px 0 0;
+        &__wrap {
+            display: block
+        }
+        .content {
+            width: 100%;
+            padding-right: 0;
+            margin-bottom: 40px;
+        }
+
+        .tabs {
+            margin-left: 0;
+        }
+
+        .sidebar {
+            width: calc(100% + 30px);
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+            padding: 30px 15px 10px;
+
+
+            &__title {
+                width: 100%;
+            }
+
+            &__item {
+                width: 50%;
+                margin-bottom: 20px;
+
+                .content {
+                    margin: 0;
+                    padding: 7px 15px 0 15px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .feedback {
+        padding: 30px 0 0;
+
+        .tabs {    
+            &__item {
+                font-size: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .feedback {
+        .sidebar {
+            &__item {
+                width: 100%;
+
+                .content {
+                    padding: 7px 0 0 15px;
+                }
+            }
+        }
+    }
+
+    .form {
+        &__row {
+            display: block;
+            margin: 0;
+
+            .form__item {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        &__footer {
+            display: block;
+        }
+
+        &__agree {
+            margin-bottom: 30px;
+            display: block;
+        }
+    }
+}

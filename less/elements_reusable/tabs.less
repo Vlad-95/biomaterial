@@ -1,0 +1,56 @@
+.tabs {
+    display: flex; 
+
+    &__item {
+        background-color: #ebeef5;
+        border: 2px solid #a2b2da;
+        color: #a2b2da;
+        font-size: 20px;
+        padding: 13px 17px;
+        border-radius: 100px;
+        margin: 12px 12px 0 0;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            color: #52bead;
+            border-color: #52bead;
+        }
+
+        &.active {
+            background-color: #52bead;
+            border-color: #52bead;
+            color: @white;
+            transition: 0.3s;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .tabs {
+        flex-wrap: wrap;
+
+        &__item {
+            font-size: 17px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .tabs {
+        &__item {
+            margin: 6px 6px 0 0;
+            padding: 10px 16px;
+            font-size: 17px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tabs {
+        
+        &__item {
+            font-size: 15px;
+        }
+    }
+}
