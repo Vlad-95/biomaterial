@@ -1,0 +1,171 @@
+.expert {
+    background-color: #f4f5f8;
+    padding: 71px 0 83px;
+
+    &__wrap {
+        display: flex;
+    }
+
+    &__video {
+        width: 68%;
+        height: 450px;
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__info {
+        width: 32%;
+        padding: 4px 0 0 74px;
+
+        .image {
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+            overflow: hidden;
+            margin-bottom: 33px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .name {
+            font-size: 20px;
+            font-weight: 600;
+            color: @darkBlue;
+            margin-bottom: 8px;
+        }
+
+        .proffession {
+            font-size: 15px;
+            font-style: italic;
+            font-weight: 400;
+            color: @darkBlue;
+            margin-bottom: 43px;
+        }
+
+        .descr {
+            font-size: 13px;
+            font-style: italic;
+            font-weight: 400;
+            color: @darkBlue;
+            line-height: 1.5;
+        }
+    }
+
+    &__citate {
+        position: relative;
+        margin-top: 57px;
+        padding-top: 31px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 34px;
+            height: 26px;
+            background-image: url('../img/icons/quot.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.8;
+            font-weight: 800;
+            color: @darkBlue;
+        }
+    }
+
+    &__btn {
+        background-color: @lightBlue;
+        font-size: 14px;
+        font-weight: 700;
+        color: @white;
+        position: relative;
+        margin-top: 36px;
+        display: inline-block;
+        padding: 8px 36px 8px 14px;
+        border-radius: 100px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            width: 8px;
+            height: 4px;
+            background-image: url('../img/icons/white-arrow.png');
+            background-size: cover;
+            background-position: center;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .expert {
+        padding: 50px 0;
+
+        &__info {
+            padding: 0 0 0 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .expert {
+
+        &__video {
+            width: 60%;
+            height: 350px;
+        }
+
+        &__info {
+            width: 40%;
+
+            .name {
+                font-size: 17px;
+            }
+
+            .proffession {
+                font-size: 13px;
+            }
+        }
+
+        &__citate {
+            margin-top: 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .expert {
+        &__wrap {
+            flex-wrap: wrap;
+        }
+
+        &__video {
+            width: 100%;
+            order: 2;
+            
+        }
+    
+        &__info {
+            width: 100%;
+            order: 1;
+            padding-left: 0;
+            margin-bottom: 30px;
+
+            .proffession {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

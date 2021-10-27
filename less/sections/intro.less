@@ -1,6 +1,7 @@
 .intro {
-    .slider {
-        
+    position: relative;
+
+    .slider {       
         
         &__item {
             height: 350px;
@@ -10,8 +11,7 @@
                 justify-content: flex-end;
                 height: 100%;
 
-                .bg {
-                    
+                .bg {                    
                     width: 50%;
                     height: 100%;
                     background-color: @blue;
@@ -60,5 +60,131 @@
             }
         }
     }
+
+    .pagination {
+        position: absolute;
+        left: 0;
+        bottom: 46px;
+        right: 0;
+        margin: auto;
+
+        .slick-dots {
+            bottom: 0;
+            width: auto;
+
+            li {
+                margin: 0;
+                width: 15px;
+                height: 15px;
+
+                &.slick-active {
+                    button {
+                        &:before {
+                            opacity: 1;
+                            background-color: @white;
+                        }
+
+                        &:after {
+                            width: 13px;
+                            height: 13px;
+                        }
+                    }
+                }
+
+                button {
+                    width: 15px;
+                    height: 15px;
+                    &:before {
+                        opacity: 1;
+                        content: '';
+                        font-family: none;
+                        background-color: #a3b3da;
+                        width: 7px;
+                        height: 7px;
+                        border-radius: 100px;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        margin: auto;
+                    }
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        margin: auto;
+                        width: 7px;
+                        height: 7px;
+                        border: 1px solid #a3b3da;
+                        border-radius: 100px;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+    }
 }
 
+@media screen and (max-width: 1200px) {
+    .intro {
+        .slider {     
+            &__item {
+                height: 320px;
+
+                &-wrap {
+                    .wrapper {
+                        padding-top: 45px;
+                        padding-bottom: 45px;
+                    }
+
+                    .text {
+                        h2 {
+                            font-size: 30px;
+                        }
+                        
+                        p {
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .pagination {
+            bottom: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .intro {
+        .slider {  
+            &__item {
+                &-wrap {
+                    .bg {
+                        width: 100%;
+                        opacity: 0.8;
+                        position: absolute;
+                    }
+
+                    .image {
+                        width: 100%;
+                    }
+
+                    .wrapper {
+                        padding-top: 20px;
+                    }
+
+                    .text {
+                        max-width: 600px;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

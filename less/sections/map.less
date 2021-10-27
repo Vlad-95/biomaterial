@@ -1,0 +1,53 @@
+.map {
+    padding: 51px 0;
+    position: relative;
+    #map {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+    }
+
+    .contacts {
+        background-color: @blue;
+        position: relative;
+        z-index: 3;
+        max-width: 300px;
+        left: -42px;
+        padding: 58px 43px;
+
+        .section-title {
+            color: @white;
+        }
+
+        &__item {
+            color: @white;
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+
+            &:not(:last-child) {
+                margin: 0 0 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1630px) {
+    .map {
+        .contacts {
+            left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .map {
+        .contacts {
+            left: 0;
+            padding: 35px;
+        }
+    }
+}

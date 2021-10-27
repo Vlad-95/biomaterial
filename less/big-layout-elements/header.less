@@ -1,104 +1,104 @@
 .header {
-    padding: 32px 0;
+    
     background-color: @white;
+
+    &__top {
+        padding: 27px 0 22px;
+    }
+
+    &__bottom {
+        border-top: 1px solid #e9ebf0;
+        padding: 19px 0;
+    }
 
     &__wrap {
         display: flex;      
         align-items: center;  
         position: relative;
-        justify-content: space-between;
     }
 
     .logo {
         svg {
-            width: 185px;
-            height: 53px;
+            width: 229px;
+            height: 66px;
+        }
+    }
+
+    .sites {
+        margin-left: auto;
+
+        &__toggle {
+            color: #1778bb;
+            font-size: 13px;
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: -4px;
+                width: 20px;
+                height: 20px;
+                background-image: url('../img/icons/sites-arrow.png');
+                background-size: 8px 5px;
+                background-position: center;
+                background-repeat: no-repeat;
+                border: 2px solid #1778bb;
+                border-radius: 100px;
+            }
+        }
+
+        &__content {
+            display: none;
+
+        }
+    }
+
+    .btn {
+        background-color: #1778bb;
+        color: @white;
+        font-weight: 700;
+        font-size: 12px;
+        text-transform: uppercase;
+        padding: 9px 14px;
+        border-radius: 100px;
+        margin-left: 42px;
+    }
+
+    .phone {
+        color: @lightBlue;
+        text-align: left;
+        margin-left: 32px;
+        
+        .time {
+            font-size: 12px;
+            font-weight: 400;
+            display: block;
+        }
+
+        .link {
+            font-weight: 700;
+            font-size: 17px;
         }
     }
 
     .nav {
-        margin-right: 0;
-        padding: 0 10px;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
 
         &__item {
             color: @darkBlue;
             font-size: 13px;
             font-weight: 700;
             text-transform: uppercase;
+            padding: 0 8px;
 
-            &:not(:last-of-type) {
-                margin-right: 12px;
-            }
-        }
-    }
-
-    .phone {
-        color: @lightBlue;
-        text-align: right;
-        align-self: flex-start;
-
-        .time {
-            font-size: 12px;
-            font-weight: 400;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .link {
-            font-weight: 700;
-            font-size: 15px;
-        }
-    }
-
-    .lang {
-        position: relative;
-        border: 1px solid #e9ebf0;
-        padding: 0 9px 0 11px;
-        height: 31px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-
-        &__current {
-            font-size: 13px;
-            font-weight: 700;
-            color: @darkBlue;
-            padding-right: 3px;
-        }
-
-        &__content {            
-            display: flex;
-            flex-direction: column;
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 11px;
-        }
-
-        &__item {
-            //display: none;
-            font-size: 13px;
-            font-weight: 700;
-            color: @darkBlue;
-
-            &.current {
-                display: none;
-            }
-        }
-
-        &__toggle {
-            width: 8px;
-            height: 5px;
-            background-image: url("../img/icons/lang-arrow.png");
-            background-size: cover;
-            background-position: center;
-            cursor: pointer;
-            transition: 0.3s;
-            transform: rotate(0deg);
-
-            &.active {
-                transform: rotate(180deg);
+            &.green {
+                color: #1db479;
             }
         }
     }
@@ -116,7 +116,7 @@
         &:before {
             content: '';
             position: absolute;
-            box-shadow: 0 0 0 0 @darkBlue;
+            box-shadow: 0 0 0 0 @blue;
             transition: 1s;
             width: 2px;
             height: 2px;
@@ -131,7 +131,7 @@
 
         &.active {
             &:before {
-                box-shadow: 0 0 0 5000px @darkBlue;
+                box-shadow: 0 0 0 5000px @blue;
             }
 
             span {
@@ -162,7 +162,7 @@
             margin: auto;
             width: 100%;
             height: 3px;
-            background-color: @darkBlue;
+            background-color: @blue;
             display: block;
             border-radius: 100px;
             transition: 0.5s;
@@ -264,77 +264,91 @@
 
 @media screen and (max-width: 1200px) {
     .header {
-        padding: 20px 0;
+
+        &__top {
+            padding: 14px 0;
+        }
 
         .logo {
             svg {
-                width: 120px;
-                height: 34px;
+                width: 190px;
+                height: 55px;
             }
         }
 
         .nav {
             &__item {
                 font-size: 12px;
-                font-weight: 400;
+                padding: 0 7px;
             }
+        }
+
+        .btn {
+            margin-left: 20px;
         }
 
         .phone {
-            .time {
-                font-size: 12px;
-                line-height: 1;
-                margin-bottom: -2px;
-            }
-
-            .link {
-                font-weight: 600;
-                font-size: 12px;
-                white-space: nowrap;
-            }
-        }
-
-        .lang {
-            
-            &__item {
-                font-size: 12px;
-                font-weight: 600;
-            }
+            margin-left: 20px;
         }
     }
 }
 
 @media screen and (max-width: 992px) {
     .header {
+
+        .logo {
+            svg {
+                width: 150px;
+                height: 43px;
+            }
+        }
         
-        .nav {
-            display: none;
+        .btn {
+            font-size: 10px;
         }
 
         .phone {
-            margin-left: auto;
-            margin-right: 15px;
-            align-self: center;
+            margin-right: 20px;
 
-            .time {
-                margin-bottom: 0;
+            .link {
+                font-size: 15px;
             }
-        }
-
-        .lang {
-            display: none;
         }
 
         .burger {
             display: block;
+        }
+
+        &__bottom {
+            display: none;
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .header {
+
+        .sites {
+            display: none;
+        }
+        
+        .btn {
+            display: none;
+        }
+
+        .phone {
+            display: none;
+        }
+
+        .burger {
+            margin-left: auto;
         }
     }
 }
 
 @media screen and (max-width: 576px) {
     .header {
-        .phone {
-            display: none;
-        }
+        
     }
 }

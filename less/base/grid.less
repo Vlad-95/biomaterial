@@ -54,8 +54,22 @@ body {
     height: 93px;
     background-image: url("../img/sq.png");
   }
+
+  &.small {
+    font-size: 25px;
+    margin-bottom: 20px;
+
+    &:before {
+      display: none;
+    }
+  }
 }
 
+.line {
+  margin: 0;
+  border: none;
+  border-bottom: 1px dashed #d3d7e2;
+}
 .title-row {
   display: flex;
   align-items: center;
