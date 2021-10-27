@@ -1,6 +1,7 @@
 .map {
     padding: 51px 0;
     position: relative;
+
     #map {
         position: absolute;
         width: 100%;
@@ -48,6 +49,25 @@
         .contacts {
             left: 0;
             padding: 35px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .map {
+        padding: 0;
+
+        #map {
+            position: static;
+            height: 250px;
+        }
+
+        .contacts {
+            left: 0;
+            padding: 35px;
+            max-width: none;
+            left: -15px;
+            width: calc(100% + 30px);
         }
     }
 }

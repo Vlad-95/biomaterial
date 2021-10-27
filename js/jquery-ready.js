@@ -3,10 +3,11 @@ $(document).ready(function() {
     let body = $('body')
     let windowWidth = window.innerWidth;
     let header = $('.header');
-    let headerWrap = $('.header__wrap');
+    let headerWrap = $('.header__wrap').first();
     let nav = header.find('.nav');
     let phone = header.find('.phone');
-    let lang = header.find('.lang')
+    let btn = header.find('.btn');
+    let sites = header.find('.sites');
     let burger = $('.burger');
     let windowHeight = $(window).height();
 
@@ -20,11 +21,14 @@ $(document).ready(function() {
         //клонируем элементы хедера
         let mobileNav = nav.clone();
         let mobilePhone = phone.clone();
-        let mobileLang = lang.clone();
+        let mobileBtn = btn.clone();
+        let mobileSites = sites.clone();
 
         mobileMenu.append(mobileNav);
-        mobileMenu.append(mobilePhone);  
-        mobileMenu.append(mobileLang);        
+        mobileMenu.append(mobileSites);  
+        mobileMenu.append(mobileBtn);   
+        mobileMenu.append(mobilePhone);         
+            
     }
 
     function showMenu() {
@@ -38,6 +42,21 @@ $(document).ready(function() {
     burger.click(showMenu);
 
     //============Мобильное меню (КОНЕЦ)
+
+
+    //=======Все сайты======
+    if ($('.sites').length) {
+        $('.sites__toggle').click(function() {
+            $(this).toggleClass('active').next().slideToggle();
+
+            if ($(this).parent().parent().hasClass('mobile-menu')) {
+                
+            } else {
+                
+            }
+        })
+    }
+    //=======Все сайты КОНЕЦ=====
 
     //=====Якорные ссылки====
     function anchorLinks () {
@@ -71,6 +90,32 @@ $(document).ready(function() {
     }
     //=====Слайдер КОНЕЦ==============
 
+    //=====текст эксперта=======
+    if ($('.expert').length) {
+        function truncate(str, maxlength) {
+            return (str.length > maxlength) ? str.slice(0, maxlength - 1) + '…' : str;
+        }
+
+        let text = $('.expert__citate').html(); 
+        let truncacteText = truncate(text, 256);
+
+        //подменяем текст
+        $('.expert__citate').html(truncacteText)
+        console.log(text)
+
+        //клик по кнопке Читать дальше
+        $('.expert__btn').click(function() {
+            
+            
+            $('.expert__citate').fadeOut(100);
+            setTimeout(() => $('.expert__citate').html(text), 100);
+            
+            $('.expert__citate').fadeIn();
+
+        })
+    }
+    //======текст эксперта КОНЕЦ
+
     //==========селекты в форме===========
     if ($('.form__row_select').length) {
         $('.form__item-select').each(function() {
@@ -100,6 +145,7 @@ $(document).ready(function() {
             });
 
             myMap.geoObjects.add(myPlacemark);
+            myMap.behaviors.disable('scrollZoom')
         }
     }
     //======карта КОНЕЦ======

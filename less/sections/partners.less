@@ -21,3 +21,46 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .partners {
+        padding: 50px 0 20px;
+
+        &__wrap {
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            width: calc((100% / 3) - 30px);
+            margin: 0 15px 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .partners {
+        
+        &__wrap {
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            width: calc((100% / 2) - 30px);
+            margin: 0 15px 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .partners {
+        
+        &__wrap {
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            width: calc((100% / 1) - 30px);
+            margin: 0 15px 30px;
+        }
+    }
+}

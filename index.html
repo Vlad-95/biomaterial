@@ -27,7 +27,7 @@
                             </div>
                         </div>
 
-                        <a href="javascript:;" class="btn">Заказать продукцию</a>
+                        <a href="javascript:;" data-anchor="feedback" class="btn">Заказать продукцию</a>
                         <div class="phone">
                             <a href="javascript:;" class="link">8 (3852)-28-29-90</a> 
                             <span class="time">Пн-Пт: 10:00 — 19:00</span>
@@ -45,14 +45,14 @@
                 <div class="wrapper">
                     <div class="header__wrap">
                         <nav class="nav">
-                            <a href="javascript:;" class="nav__item">О продукте</a>
-                            <a href="javascript:;" class="nav__item">Применение</a>
-                            <a href="javascript:;" class="nav__item">Назначение и действие</a>
-                            <a href="javascript:;" class="nav__item green">Экологичность</a>
+                            <a href="javascript:;" data-anchor="about" class="nav__item">О продукте</a>
+                            <a href="javascript:;" data-anchor="areas" class="nav__item">Применение</a>
+                            <a href="javascript:;" data-anchor="action" class="nav__item">Назначение и действие</a>
+                            <a href="javascript:;" data-anchor="ecological" class="nav__item green">Экологичность</a>
                             <a href="javascript:;" class="nav__item">Производитель</a>
-                            <a href="javascript:;" class="nav__item">Документация</a>
-                            <a href="javascript:;" class="nav__item">Контакты</a>
-                            <a href="javascript:;" class="nav__item">Заказать продукцию</a>
+                            <a href="javascript:;" data-anchor="docs" class="nav__item">Документация</a>
+                            <a href="javascript:;" data-anchor="map" class="nav__item">Контакты</a>
+                            <a href="javascript:;" data-anchor="feedback" class="nav__item">Заказать продукцию</a>
                         </nav>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
 
         <section class="about">
             <div class="wrapper">
-                <div class="about__block about__block_about">
+                <div data-anchor="about" class="about__block about__block_about">
                     <div class="about__wrap">
                         <div class="text">
                             <h2 class="section-title">Что такое "Биотерминатор"?</h2>
@@ -134,7 +134,7 @@
                     </div>
                 </div>
 
-                <div class="about__block about__block_areas">
+                <div data-anchor="areas" class="about__block about__block_areas">
                     <div class="about__wrap">
                         <div class="icons">
                             <div class="icons__item">
@@ -234,7 +234,7 @@
                 <hr>
 
 
-                <div class="about__block about__block_action">
+                <div data-anchor="action" class="about__block about__block_action">
                     <div class="about__wrap">
                         <div class="text">
                             <h2 class="section-title">Назначение и действие</h2>
@@ -313,7 +313,11 @@
 
                 <div class="expert__citate">
                     <p>
-                        Продукты взаимодействия альдегидов с аммиаком легко вступают в реакции полимеризации, в результате чего образуется нелетучий нерастворимый в воде комплекс соединений. BIOTerminator содержит как высокомолекулярные альдегиды, так и альдегиды с низкой молекулярной массой, в результате чего, равный объем BIOTerminator несет большее ...
+                        Продукты взаимодействия альдегидов с аммиаком легко вступают в реакции полимеризации, в результате чего образуется нелетучий нерастворимый в воде комплекс соединений. BIOTerminator содержит как высокомолекулярные альдегиды, так и альдегиды с низкой молекулярной массой, в результате чего, равный объем BIOTerminator несет большее
+                    </p>
+
+                    <p>
+                        Продукты взаимодействия альдегидов с аммиаком легко вступают в реакции полимеризации, в результате чего образуется нелетучий нерастворимый в воде комплекс соединений. BIOTerminator содержит как высокомолекулярные альдегиды, так и альдегиды с низкой молекулярной массой, в результате чего, равный объем BIOTerminator несет большее
                     </p>
                 </div>
 
@@ -332,12 +336,12 @@
                     <form action="" class="question">
                         <label class="question__item">
                             <p class="question__item-name">ФИО*</p>
-                            <input type="text">
+                            <input type="text" class="question__item-input error">
                         </label>
 
                         <label class="question__item">
                             <p class="question__item-name">Телефон или email*</p>
-                            <input type="text">
+                            <input type="text" class="question__item-input">
                         </label>
 
                         <div class="question__footer">
@@ -353,7 +357,7 @@
             </div>
         </section>
 
-        <section class="ecological">
+        <section data-anchor="ecological" class="ecological">
             <div class="wrapper">
                 <div class="ecological__wrap">
                     <div class="text">
@@ -381,7 +385,7 @@
                 <h2 class="section-title small">Мнение экспертов</h2>
 
                 <div class="opinion__wrap">
-                    <a href="javascript:;" class="opinion__item">
+                    <a href="javascript:;" data-fancybox="single" data-src="https://www.youtube.com/embed/OnvQggy3Ezw" class="opinion__item">
                         <div class="image">
                             <img src="img/intro-img.png" alt="">
 
@@ -399,7 +403,7 @@
                         </div>
                     </a>
 
-                    <a href="javascript:;" class="opinion__item">
+                    <a href="javascript:;" data-fancybox="single" data-src="https://www.youtube.com/embed/OnvQggy3Ezw" class="opinion__item">
                         <div class="image">
                             <img src="img/intro-img.png" alt="">
 
@@ -417,7 +421,7 @@
                         </div>
                     </a>
 
-                    <a href="javascript:;" class="opinion__item">
+                    <a href="javascript:;" data-fancybox="single" data-src="https://www.youtube.com/embed/OnvQggy3Ezw" class="opinion__item">
                         <div class="image">
                             <img src="img/intro-img.png" alt="">
 
@@ -441,7 +445,7 @@
         <div class="wrapper">
             <hr class="line">
         </div>
-        <section class="docs">
+        <section data-anchor="docs" class="docs">
             <div class="wrapper">
                 <h2 class="section-title">Документация</h2>
 
@@ -559,7 +563,7 @@
             
         </section>
 
-        <section class="map">
+        <section data-anchor="map" class="map">
             <div id="map"></div>
 
             <div class="wrapper">

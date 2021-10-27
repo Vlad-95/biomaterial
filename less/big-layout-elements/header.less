@@ -26,6 +26,7 @@
 
     .sites {
         margin-left: auto;
+        position: relative;
 
         &__toggle {
             color: #1778bb;
@@ -47,12 +48,38 @@
                 background-repeat: no-repeat;
                 border: 2px solid #1778bb;
                 border-radius: 100px;
+                transition: 0.3s;
+            }
+
+            &.active {
+                &:before {
+                    transform: rotate(180deg);
+                    transition: 0.3s;
+                }
             }
         }
 
         &__content {
             display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0;
+            width: 100%;
+            background-color: #1778bb;
+            padding: 20px;
+            z-index: 3;
+        }
 
+        &__item {
+            color: @white;
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: 600;
+            display: block;
+
+            &:not(:last-of-type) {
+                margin-bottom: 20px;
+            }
         }
     }
 
@@ -215,50 +242,76 @@
                 font-size: 17px;
                 font-weight: 600;
 
+                &.green {
+                    color: #1db479;
+                }
+
                 &:not(:first-of-type) {
                     margin-left: 0;
                 }
             }
         }
 
-        .phone {
-            display: inline-block;
-            color: @white;
-            margin-top: 40px;
-            text-align: left;
-        }
-
-        .lang {
-            display: block;
-            border: none;
-            height: auto;
-            padding: 0;
+        .sites {
             margin-top: 20px;
-
-            &__current {
-                display: none;
+            display: block;
+            
+            &__toggle {
+                color: @white;
+                font-size: 13px;
+                position: relative;
+                padding-left: 30px;
+                cursor: pointer;
+    
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: -4px;
+                    width: 20px;
+                    height: 20px;
+                    background-image: url('../img/icons/white-arrow.png');
+                    background-size: 8px 5px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    border: 2px solid @white;
+                    border-radius: 100px;
+                }
             }
-
-            &__content {            
-                display: flex;
-                flex-direction: row;
-                position: static;
+    
+            &__content {
+                display: none;
+                position: static; 
+                background: none;   
+                padding: 20px 30px;
             }
 
             &__item {
                 color: @white;
-                margin-right: 10px;
 
-                &.current {
-                    display: block;
-                    text-decoration: underline;
+                &:not(:last-of-type) {
+                    margin-bottom: 10px;
                 }
             }
-
-            &__toggle {
-                display: none;
-            }
         }
+
+        .btn {
+            margin-left: 0;
+            margin-top: 20px;
+            display: inline-block;
+            background-color: @white;
+            color: @darkBlue;
+        }
+
+        .phone {
+            display: block;
+            color: @white;
+            margin-top: 20px;
+            margin-left: 0;
+            text-align: left;
+        }
+
+        
     }
 }
 
@@ -347,8 +400,3 @@
     }
 }
 
-@media screen and (max-width: 576px) {
-    .header {
-        
-    }
-}

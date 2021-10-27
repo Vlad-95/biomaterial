@@ -197,6 +197,12 @@
 
             &_action {
                 padding-top: 60px;
+
+                .about__wrap {
+                    &:not(:last-of-type) {
+                        margin-bottom: 30px;
+                    }
+                }
             }
         }
     }
@@ -229,12 +235,26 @@
             &_action {
 
                 .text {
-                    width: 45%;
+                    width: 60%;
                 }
     
                 .image {
-                    width: 51%;                
+                    width: 38%;                
                 }
+            }
+        }
+
+        .wysiwyg {
+            p,
+            li {
+                font-size: 15px;               
+                line-height: 1.8;                
+            }
+    
+            p,
+            ul,
+            ol {
+                margin: 20px 0;
             }
         }
     }
