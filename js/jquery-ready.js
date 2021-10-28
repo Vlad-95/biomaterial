@@ -105,12 +105,27 @@ $(document).ready(function() {
 
         //клик по кнопке Читать дальше
         $('.expert__btn').click(function() {
+            $(this).toggleClass("open");
+
+            if ($(this).hasClass('open')) {
+                $('.expert__citate').fadeOut(100);
+
+                setTimeout(() => $('.expert__citate').html(text), 100);
+                
+                $('.expert__citate').fadeIn();
+
+                $(this).text('Скрыть')
+            } else {
+                $('.expert__citate').fadeOut(100);
+
+                setTimeout(() => $('.expert__citate').html(truncacteText), 100);
+                
+                $('.expert__citate').fadeIn();
+
+                $(this).text('Читать дальше')
+            }
             
             
-            $('.expert__citate').fadeOut(100);
-            setTimeout(() => $('.expert__citate').html(text), 100);
-            
-            $('.expert__citate').fadeIn();
 
         })
     }
