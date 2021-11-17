@@ -49,6 +49,12 @@
         &-select {
             width: 100%;
             background-color: #f4f5f8;
+            
+            &.error {
+                & ~ .select2.select2-container--default .select2-selection--single {
+                    border-color: red!important;
+                }
+            }
         }
     }
 
