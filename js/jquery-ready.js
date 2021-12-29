@@ -64,7 +64,7 @@ $(document).ready(function() {
         let currentDiv = $('[data-anchor="'+ currentLink +'"]:not(a)');        
 
         //скролл до элемента
-        $('html, body').animate({scrollTop: currentDiv.offset().top}, 500);
+        $('html, body').animate({scrollTop: currentDiv.offset().top - 100}, 500);
 
         if (windowWidth <= 992) {
             let mobileMenu = $('.mobile-menu');

@@ -4,20 +4,31 @@
     &__wrap {
         display: flex;
         margin: 0 -15px;
+        justify-content: center;
     }
 
     &__item {
-        border: 1px solid #e9ebf0;
+        border: 1px solid #cacfdd;
         width: calc((100% / 6) - 30px);
         margin: 0 15px;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 170px;
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+        transition: 0.3s;
+        background-color: #f4f5f8;
 
-        img {
+        img { 
             max-width: 111px;
             max-height: 111px;
+        }
+
+        &:hover {
+            transform: scale(1.02);
+            border-color: #0070ba;
+            box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.3);
         }
     }
 }
